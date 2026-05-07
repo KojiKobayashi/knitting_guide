@@ -1,4 +1,4 @@
-name: Deplay Astro to Github Pages
+name: Deploy Astro to Github Pages
 
 on:
   push:
@@ -16,6 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '>=22.12.0'
       - uses: withastro/action@v2
 
   deploy:
@@ -24,8 +27,8 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deplpyment
+      - id: deployment
         uses: actions/deploy-pages@v4
         
