@@ -7,7 +7,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://kojikobayashi.github.io',
-	base: '/knitting-guide/',
+	base: '/knitting_guide/',
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{
